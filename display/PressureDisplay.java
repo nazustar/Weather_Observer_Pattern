@@ -4,9 +4,14 @@ import observer.Observer;
 import observer.DisplayElement;
 
 public class PressureDisplay implements DisplayElement, Observer {
-    
-    public void update(){}
-    
-    public void display(){}
+    @Override
+    public void update(float t, float h, float p){
+
+    }
+
+    @Override
+    public void display(){
+        
+    }
 
 }

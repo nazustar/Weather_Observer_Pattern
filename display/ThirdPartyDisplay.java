@@ -4,9 +4,12 @@ import observer.DisplayElement;
 import observer.Observer;
 
 public class ThirdPartyDisplay implements DisplayElement, Observer{
-
-    public void update(){}
+    @Override
+    public void update(float t, float h, float p){
+    }
     
-    public void display(){}
+    @Override
+    public void display(){
+    }
 
 }

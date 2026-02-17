@@ -4,9 +4,10 @@ import observer.Observer;
 import observer.DisplayElement;
 
 public class StadisticsDisplay implements DisplayElement, Observer{
-    
-    public void update(){}
-    
+    @Override
+    public void update(float t, float h, float p){
+    }
+
     public void display(){}
 
 }
