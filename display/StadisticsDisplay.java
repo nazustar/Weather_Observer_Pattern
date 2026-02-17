@@ -5,4 +5,8 @@ import observer.DisplayElement;
 
 public class StadisticsDisplay implements DisplayElement, Observer{
     
+    public void update(){}
+    
+    public void display(){}
+
 }

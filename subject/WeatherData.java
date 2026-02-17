@@ -7,10 +7,10 @@ import observer.Observer;
 public class WeatherData implements Subject{
 
     //Attributes fot getters.
-    protected float temperature;
-    protected float humidity;
-    protected float pressure;
-    protected float heatIndex;
+    public float temperature;
+    public float humidity;
+    public float pressure;
+    public float heatIndex;
 
     //Array for observers.
     protected ArrayList<Observer> observers;
@@ -49,7 +49,8 @@ public class WeatherData implements Subject{
     }
     
     //Measurements update
-    public void MeasurementsChanged(){}
-
+    public void MeasurementsChanged(Observer o){
+        notifyObservers(o);
+    }
 
 }
