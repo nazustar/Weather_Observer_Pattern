@@ -7,7 +7,7 @@ import observer.DisplayElement;
 public class StatisticsDisplay implements DisplayElement, Observer{
 
     //Attributes.
-    private float maxTemp = -Float.MIN_VALUE;
+    private float maxTemp = -Float.MAX_VALUE;
     private float minTemp = Float.MAX_VALUE;
     private float tempSum;
     private int numReadings;
@@ -31,7 +31,7 @@ public class StatisticsDisplay implements DisplayElement, Observer{
     @Override
     public void display(){
         float average = tempSum / numReadings;
-        System.out.println("Stadistics Display");
+        System.out.println("Statistics Display");
         System.out.println("-----------------------");
         System.out.println("Maximum temperature: " + maxTemp);
         System.out.println("Minimal temperature: " + minTemp);

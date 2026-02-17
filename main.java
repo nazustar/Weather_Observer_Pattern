@@ -16,7 +16,12 @@ public static void main(String[] args) {
     new ForecastDisplay(weatherData);
     new StatisticsDisplay(weatherData);
 
+    System.out.println("First measurements:");
+    System.out.println("-----------------------");
     weatherData.setMeasurements(15, 78, 1024);
+    System.out.println("Second measurements:");
+    System.out.println("-----------------------");
     weatherData.setMeasurements(25,64, 1001);
+    System.out.println("End");
     }
 }
