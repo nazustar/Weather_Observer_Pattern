@@ -27,14 +27,14 @@ public class StadisticsDisplay implements DisplayElement, Observer{
         display();
     }
 
-    //Implementation from DisplayElement.
+    //Implementation from DisplayEement.
     @Override
     public void display(){
         float average = tempSum / numReadings;
         System.out.println("Stadistics Display");
         System.out.println("-----------------------");
-        System.out.println("Max temperature: " + maxTemp);
-        System.out.println("Min temperature: " + minTemp);
+        System.out.println("Maxim temperature: " + maxTemp);
+        System.out.println("Minimal temperature: " + minTemp);
         System.out.println("Average temperature: " + average);
         System.out.println("-----------------------");
     }

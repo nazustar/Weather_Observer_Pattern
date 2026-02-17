@@ -19,6 +19,7 @@ public class ForecastDisplay implements DisplayElement, Observer{
     public void update(float t, float h, float p){
         lastPressure = currentPressure;
         currentPressure = p;
+        display();
     }
 
     @Override

@@ -7,10 +7,10 @@ import observer.Observer;
 public class WeatherData implements Subject{
 
     //Attributes for getters.
-    public float temperature;
-    public float humidity;
-    public float pressure;
-    public float heatIndex;
+    private float temperature;
+    private float humidity;
+    private float pressure;
+    private float heatIndex;
 
     //Array for observers.
     protected ArrayList<Observer> observers;

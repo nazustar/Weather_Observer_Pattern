@@ -24,6 +24,7 @@ public class CurrentConditions implements DisplayElement, Observer {
         this.pressure = p;
         display();
     }
+    
     //Implementation of the method from DisplayElement.
     @Override
     public void display (){
