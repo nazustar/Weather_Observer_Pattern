@@ -4,16 +4,16 @@ import observer.Observer;
 import subject.Subject;
 import observer.DisplayElement;
 
-public class StadisticsDisplay implements DisplayElement, Observer{
+public class StatisticsDisplay implements DisplayElement, Observer{
 
     //Attributes.
-    private float maxTemp = Float.MIN_VALUE;
+    private float maxTemp = -Float.MIN_VALUE;
     private float minTemp = Float.MAX_VALUE;
     private float tempSum;
     private int numReadings;
 
     //Constructor that registers the observer to the subject for display.
-    public StadisticsDisplay(Subject weatherData){
+    public StatisticsDisplay(Subject weatherData){
         weatherData.registerObserver(this);
     }
 
