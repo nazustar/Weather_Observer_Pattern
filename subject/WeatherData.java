@@ -15,18 +15,28 @@ public class WeatherData implements Subject{
     //Array for observers.
     protected ArrayList<Observer> observers;
 
+    //Constructor.
+    public WeatherData(){
+        observers = new ArrayList<>();
+    }
+
     //Implementations from subject.
 
+    @Override
     public void registerObserver(Observer o) {
         observers.add(o);
     }
 
+    @Override
     public void removeObserver(Observer o){
         observers.remove(o);
     }
 
-    public void notifyObservers(Observer o){
-        o.update(temperature, humidity, pressure);
+    @Override
+    public void notifyObservers() {
+        for (Observer o : observers) {
+            o.update(temperature, humidity, pressure);
+        }
     }
 
     //Class methods.
@@ -49,8 +59,15 @@ public class WeatherData implements Subject{
     }
     
     //Measurements update
-    public void MeasurementsChanged(Observer o){
-        notifyObservers(o);
+    public void measurementsChanged(){
+        notifyObservers();
+    }
+
+    public void setMeasurements(float temperature, float humidity, float pressure) {
+        this.temperature = temperature;
+        this.humidity = humidity;
+        this.pressure = pressure;
+        measurementsChanged();
     }
 
 }

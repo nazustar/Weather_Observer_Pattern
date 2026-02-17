@@ -1,9 +1,10 @@
-package subject;
+package display;
 
 import observer.DisplayElement;
 import observer.Observer;
+import subject.Subject;
 
-public class HeatIndex implements Observer, DisplayElement{
+public class HeatIndexDisplay implements Observer, DisplayElement{
 
     //Attributes.
     public double heatIndex;
@@ -21,8 +22,12 @@ public class HeatIndex implements Observer, DisplayElement{
     private double c8 = 0.00072546;
     private double c9 = -0.000003582;
 
-    //Implementation of update method from Observer.
-    //Here we update the temperature and humidity, and update the heat index.
+    //Constructor that registers the observer to the subject for display.
+    public HeatIndexDisplay(Subject weatherData){
+        weatherData.registerObserver(this);
+    }
+
+    //Implementation from Observer interface.
     @Override
     public void update(float t, float h, float p) {
         this.temperature = t;
@@ -42,6 +47,10 @@ public class HeatIndex implements Observer, DisplayElement{
     //Method from DisplayElement interface.
     @Override
     public void display(){
+        System.out.println("Heat Index Display");
+        System.out.println("-----------------------");
         System.out.println("The heat index is: " + heatIndex);
+        System.out.println("-----------------------");
     }
+
 }
