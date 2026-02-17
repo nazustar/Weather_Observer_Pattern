@@ -6,7 +6,7 @@ import observer.Observer;
 
 public class WeatherData implements Subject{
 
-    //Attributes fot getters.
+    //Attributes for getters.
     public float temperature;
     public float humidity;
     public float pressure;
@@ -21,7 +21,6 @@ public class WeatherData implements Subject{
     }
 
     //Implementations from subject.
-
     @Override
     public void registerObserver(Observer o) {
         observers.add(o);
