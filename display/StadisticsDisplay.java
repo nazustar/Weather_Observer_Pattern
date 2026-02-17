@@ -1,13 +1,41 @@
 package display;
 
 import observer.Observer;
+import subject.Subject;
 import observer.DisplayElement;
 
 public class StadisticsDisplay implements DisplayElement, Observer{
-    @Override
-    public void update(float t, float h, float p){}
 
-    @Override
-    public void display(){}
+    //Attributes.
+    private float maxTemp = Float.MIN_VALUE;
+    private float minTemp = Float.MAX_VALUE;
+    private float tempSum;
+    private int numReadings;
 
+    //Constructor that registers the observer to the subject for display.
+    public StadisticsDisplay(Subject weatherData){
+        weatherData.registerObserver(this);
+    }
+
+    //Implementation from Observer.
+    @Override
+    public void update(float t, float h, float p){
+        tempSum += t;
+        numReadings++;
+        maxTemp = Math.max(maxTemp, t);
+        minTemp = Math.min(minTemp, t);
+        display();
+    }
+
+    //Implementation from DisplayElement.
+    @Override
+    public void display(){
+        float average = tempSum / numReadings;
+        System.out.println("Stadistics Display");
+        System.out.println("-----------------------");
+        System.out.println("Max temperature: " + maxTemp);
+        System.out.println("Min temperature: " + minTemp);
+        System.out.println("Average temperature: " + average);
+        System.out.println("-----------------------");
+    }
 }
