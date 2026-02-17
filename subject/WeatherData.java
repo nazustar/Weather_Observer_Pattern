@@ -1,22 +1,32 @@
 package subject;
 
+import java.util.ArrayList;
+
+import observer.Observer;
+
 public class WeatherData implements Subject{
+
     //Attributes fot getters.
     protected float temperature;
     protected float humidity;
     protected float pressure;
     protected float heatIndex;
 
+    //Array for observers.
+    protected ArrayList<Observer> observers;
 
     //Implementations from subject.
 
-    public void registerObserver() {
+    public void registerObserver(Observer o) {
+        observers.add(o);
     }
 
-    public void removeObserver(){
+    public void removeObserver(Observer o){
+        observers.remove(o);
     }
 
-    public void notifyObservers(){
+    public void notifyObservers(Observer o){
+        o.update(temperature, humidity, pressure);
     }
 
     //Class methods.
