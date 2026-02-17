@@ -1,6 +1,12 @@
 package subject;
 
 public class WeatherData implements Subject{
+    //Attributes fot getters.
+    protected float temperature;
+    protected float humidity;
+    protected float pressure;
+    protected float heatIndex;
+
 
     //Implementations from subject.
 
@@ -16,16 +22,20 @@ public class WeatherData implements Subject{
     //Class methods.
 
     //Getters.
-    public void getTemperature(){
+    public float getTemperature(){
+        return temperature;
     }
 
-    public void getHumidity(){
+    public float getHumidity(){
+        return humidity;
     }
 
-    public void getPressure(){
+    public float getPressure(){
+        return pressure;
     }
 
-    public void getHeatIndex(){
+    public float getHeatIndex(){
+        return heatIndex;
     }
     
     //Measurements update
