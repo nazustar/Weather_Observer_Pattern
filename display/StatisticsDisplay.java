@@ -33,7 +33,7 @@ public class StatisticsDisplay implements DisplayElement, Observer{
         float average = tempSum / numReadings;
         System.out.println("Stadistics Display");
         System.out.println("-----------------------");
-        System.out.println("Maxim temperature: " + maxTemp);
+        System.out.println("Maximum temperature: " + maxTemp);
         System.out.println("Minimal temperature: " + minTemp);
         System.out.println("Average temperature: " + average);
         System.out.println("-----------------------");
